@@ -11,5 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/index.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .js('resources/js/main.js', 'public/js')
+    .js('node_modules/mdbootstrap/js/popper.min.js', 'public/js')
+    .js('node_modules/mdbootstrap/js/bootstrap.min.js', 'public/js')
+    .js('node_modules/mdbootstrap/js/mdb.min.js', 'public/js');
