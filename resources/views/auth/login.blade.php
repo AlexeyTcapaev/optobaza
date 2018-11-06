@@ -60,10 +60,10 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link btn-flat" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link btn-flat" href="{{ route('password.request') }}">
                                         {{ __('Registration') }}
                                     </a>
                             </div>

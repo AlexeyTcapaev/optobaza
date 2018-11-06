@@ -9568,6 +9568,11 @@ nav ul a {
   padding: 5px 0;
 }
 
+a.btn-flat {
+  color: #0fa1e0 !important;
+  background-color: transparent !important;
+}
+
 .card {
   display: -webkit-box;
   display: -ms-flexbox;

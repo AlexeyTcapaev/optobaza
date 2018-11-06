@@ -51,7 +51,10 @@ nav ul a {
     align-items: center;
     padding: 5px 0;
 }
-
+a.btn-flat{
+    color: #0fa1e0!important;
+    background-color: transparent!important;
+}
 .card {
     display: flex;
     flex-direction: column;
