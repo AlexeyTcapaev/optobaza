@@ -40,7 +40,9 @@ nav ul a {
 .brand-logo {
     height: 100%;
 }
-
+.search-bar *{
+    border-radius: 0!important;
+}
 .search-bar {
 
     display: flex;

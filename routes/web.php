@@ -23,6 +23,12 @@ Route::get('/about', function () {
 Route::get('/work', function () {
     return view('work');
 });
+Route::get('/catalog', function () {
+    return view('catalog');
+});
+Route::get('/login', function () {
+    return view('login');
+});
 Route::get('/admin','Admin\AdminDashboardController@index');
 Route::get('/admin/users','Admin\AdminUsersController@index');
 Auth::routes();

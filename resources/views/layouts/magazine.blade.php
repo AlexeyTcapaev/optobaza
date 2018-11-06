@@ -41,12 +41,18 @@
         @yield('breadcrumbs')
             <div class="container">
             <div class="row">
+                @if(trim($__env->yieldContent(('sidebar'))))
                 <div class="col l9 s12">
                     @yield('content')
                 </div>
                 <div class="col l3 s12">
                     @yield('sidebar')
                 </div>
+                @else
+                <div class="col l12 s12">
+                        @yield('content')
+                </div>
+                @endif
             </div>
 
             </div>

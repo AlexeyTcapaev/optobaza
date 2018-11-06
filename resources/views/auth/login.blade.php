@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.magazine')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header"><h1>{{ __('Login') }}</h1></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -42,10 +42,13 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
+                                    <p>
+                                            <label>
+                                              <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
+                                              <span>                                        {{ __('Remember Me') }}</span>
+                                            </label>
+                                          </p>
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
                                     </label>
                                 </div>
                             </div>
@@ -60,6 +63,9 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Registration') }}
+                                    </a>
                             </div>
                         </div>
                     </form>
