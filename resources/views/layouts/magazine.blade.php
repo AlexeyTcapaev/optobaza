@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Оптобаза</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
@@ -26,6 +26,7 @@
             <li><a href="mobile.html">Оплата и доставка</a></li>
             <li><a href="mobile.html">Контакты</a></li>
             <li><a href="mobile.html">Акции</a></li>
+            <li><a href="mobile.html"><i class="material-icons i-nav">account_circle</i></a></li>
         </ul>
         </div>
     </nav>
@@ -37,12 +38,13 @@
     </ul>
         <main>
         @yield('carousel')
+        @yield('breadcrumbs')
             <div class="container">
             <div class="row">
-                <div class="col l9">
+                <div class="col l9 s12">
                     @yield('content')
                 </div>
-                <div class="col l3">
+                <div class="col l3 s12">
                     @yield('sidebar')
                 </div>
             </div>
@@ -57,24 +59,29 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5>Footer Content</h5>
-                <p class="secondary">You can use rows and columns here to organize your footer content.</p>
+                <h5>Оптобаза</h5>
+                <p class="secondary">магазин инструмента и стройматериалов.</p>
+                <p class="secondary">Телефон в Санкт-Петербурге:<br><strong><a href="tel:88127029956">88127029956</a></strong></p>
+                <p class="secondary">График работы:ПН-ПТ,9.00-18.00</p>
+                <p class="secondary">Санкт-Петербург, ул. Магнитогорская, д.51Ж,офис 342.</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5>Links</h5>
+                <h5>Страницы</h5>
                 <ul>
-                  <li><a class="secondary" href="#!">Link 1</a></li>
-                  <li><a class="secondary" href="#!">Link 2</a></li>
-                  <li><a class="secondary" href="#!">Link 3</a></li>
-                  <li><a class="secondary" href="#!">Link 4</a></li>
+                  <li><a class="secondary" href="#!">Главная</a></li>
+                  <li><a class="secondary" href="#!">О нас</a></li>
+                  <li><a class="secondary" href="#!">Каталог</a></li>
+                  <li><a class="secondary" href="#!">Правила работы</a></li>
+                  <li><a class="secondary" href="#!">Оплата и доставка</a></li>
+                  <li><a class="secondary" href="#!">Контакты</a></li>
+                  <li><a class="secondary" href="#!">Акции</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="secondary right" href="#!">More Links</a>
+            © 2018 ООО "Оптобаза"      
             </div>
           </div>
         </footer>

@@ -108,7 +108,7 @@
       <p>First Line <br>
          Second Line
       </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      <a href="#!" class="secondary-content">06.11.2018</a>
     </li>
     <li class="collection-item avatar">
       <i class="material-icons circle">folder</i>

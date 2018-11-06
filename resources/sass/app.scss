@@ -10,11 +10,20 @@ nav a {
     color: #000;
 }
 
+.i-nav{
+    height: 35px!important; 
+    line-height: 35px!important; 
+}
 nav ul a {
     color: #000;
     line-height: normal;
     padding: .5rem 15px;
     transition: 0.3s linear;
+    display: flex;
+    align-items: center;
+}
+.secondary-content{
+    color: #0fa1e0;
 }
 
 .page-footer {
@@ -91,7 +100,29 @@ div.cascade {
 .news {
     margin: 2.75rem 0 0 0;
 }
-
+.bread{
+    position: relative!important;
+    box-shadow: none;
+    z-index: 0;
+}
+.active{
+    background-color: #0fa1e0!important;
+    color: #fff!important;
+}
+.collection-item{
+    color: #000;
+}
+.breadcrumb:before{
+    color: #0fa1e0!important;
+}
+.breadcrumb{
+    color: #0fa1e0!important;
+}
+@media only screen and (max-width: 375px) {
+    h1{
+        font-size: 2.2rem;
+    }
+}
 @media only screen and (max-width: 1320px) {
     .hide-on-med-and-down {
         display: none !important;

@@ -14,7 +14,17 @@
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/contacts', function () {
+    return view('contacts');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/work', function () {
+    return view('work');
+});
+Route::get('/admin','Admin\AdminDashboardController@index');
+Route::get('/admin/users','Admin\AdminUsersController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
