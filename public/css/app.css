@@ -9641,7 +9641,7 @@ div.cascade {
   z-index: 0;
 }
 
-.active {
+.nav-active {
   background-color: #0fa1e0 !important;
   color: #fff !important;
 }
