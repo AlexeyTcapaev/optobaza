@@ -9641,6 +9641,21 @@ div.cascade {
   z-index: 0;
 }
 
+.news li {
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.news li:hover {
+  color: #fff;
+  background-color: #0fa1e0;
+}
+
+.news li:hover .secondary-content {
+  color: #fff;
+}
+
 .nav-active {
   background-color: #0fa1e0 !important;
   color: #fff !important;
@@ -9698,7 +9713,7 @@ div.cascade {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  bottom: -13px;
+  bottom: -10px;
   right: -10px;
   z-index: 99;
 }
