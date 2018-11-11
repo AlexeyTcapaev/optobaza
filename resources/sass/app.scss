@@ -228,6 +228,9 @@ main {
 
 nav .brand-logo {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-bar i:hover {
