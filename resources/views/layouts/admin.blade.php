@@ -19,22 +19,29 @@
                     </ul>
                     </div>
             </nav>
+            <ul class="sidenav" id="mobile-demo">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">Javascript</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                </ul>
             <main>
-    <div class="row">
+    <div class="row hide-on-med-and-down">
 
             <div class="col s12 m4 l2"> <!-- Note that "m4 l3" was added -->
                 <div class="collection">
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item active">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                      </div>
+                    <a href="{{ route('admin.') }}" class="collection-item {{setActive(['admin'])}}">Пользователи</a>
+                    <a href="{{ route('admin.catalog') }}" class="collection-item {{setActive(['admin/catalog'])}}">Каталог</a>
+                    <a href="#!" class="collection-item {{setActive(['admin/products'])}}">Товары</a>
+                    <a href="#!" class="collection-item {{setActive(['admin/carousel'])}}">Карусель</a>
+                    <a href="#!" class="collection-item {{setActive(['admin/nav'])}}">Навигация</a>
+                </div>
             </div>
-      
+
             <div class="col s12 m8 l10">
                 @yield('content')
             </div>
-      
+
           </div>
         </main>
         <script src="{{ mix('js/app.js') }}" defer></script>

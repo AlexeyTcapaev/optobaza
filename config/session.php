@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 return [
 
     /*
@@ -150,8 +152,7 @@ return [
     | available to in your application. A sensible default has been set.
     |
     */
-
-    'domain' => env('SESSION_DOMAIN', null),
+    'domain' => env('APP_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------

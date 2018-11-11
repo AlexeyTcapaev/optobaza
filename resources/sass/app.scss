@@ -174,7 +174,10 @@ div.cascade {
 
     z-index: 99;
 }
-
+.collection .collection-item.active {
+    background-color: #0fa1e0;
+    color: #fff;
+}
 .cart-feature:hover {
     background-color: #0fa1e0;
 }
@@ -233,7 +236,8 @@ nav .brand-logo {
 }
 
 .brand-logo img {
-    max-height: 100%;
+    max-height: 90%;
+    max-width: 80%;
 }
 
 nav ul a:hover {

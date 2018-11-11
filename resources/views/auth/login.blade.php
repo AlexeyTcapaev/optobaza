@@ -3,10 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+            <div class="card-header"><h1>{{ __('Вход') }}</h1></div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h1>{{ __('Login') }}</h1></div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -63,7 +62,7 @@
                                 <a class="btn btn-link btn-flat" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
-                                <a class="btn btn-link btn-flat" href="{{ route('password.request') }}">
+                                <a class="btn btn-link btn-flat" href="{{ route('register') }}">
                                         {{ __('Registration') }}
                                     </a>
                             </div>

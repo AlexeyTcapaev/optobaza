@@ -18,7 +18,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
+    public function isAdmin()    {
+        return $this->admin;
+    }
     /**
      * The attributes that should be hidden for arrays.
      *
