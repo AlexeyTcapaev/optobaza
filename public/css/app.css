@@ -9791,6 +9791,24 @@ main {
           justify-content: space-between;
 }
 
+.admin-catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.admin-catalog .actions a.btn,
+.admin-catalog .actions a.btn-large,
+.admin-catalog .actions a.btn-small {
+  margin: 0 10px;
+}
+
 nav .brand-logo {
   position: relative;
   display: -webkit-box;
