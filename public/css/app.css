@@ -9533,6 +9533,12 @@ nav ul a {
   color: #0fa1e0;
 }
 
+.admin-catalog .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .page-footer {
   padding-top: 20px;
   color: #0fa1e0;

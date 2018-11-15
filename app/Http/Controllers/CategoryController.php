@@ -35,7 +35,8 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create($request->all());
+        return redirect()->route('admin.catalog');
     }
 
     /**
@@ -78,8 +79,9 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        Category::find($id)->delete();
+        return redirect()->route('admin.catalog');
     }
 }

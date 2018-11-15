@@ -32,7 +32,7 @@
                 <div class="collection">
                     <a href="{{ route('admin.') }}" class="collection-item {{setActive(['admin'])}}">Пользователи</a>
                     <a href="{{ route('admin.catalog') }}" class="collection-item {{setActive(['admin/catalog'])}}">Каталог</a>
-                    <a href="#!" class="collection-item {{setActive(['admin/products'])}}">Товары</a>
+                    <a href="{{ route('admin.products') }}" class="collection-item {{setActive(['admin/products'])}}">Товары</a>
                     <a href="#!" class="collection-item {{setActive(['admin/carousel'])}}">Карусель</a>
                     <a href="#!" class="collection-item {{setActive(['admin/nav'])}}">Навигация</a>
                 </div>

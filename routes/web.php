@@ -30,10 +30,12 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::name('admin.')->namespace('Admin')->prefix('admin')->middleware('auth', 'is_admin')->group(function () {
-    Route::get('/', 'DashboardController@index');
-    Route::get('/catalog', 'DashboardController@catalog')->name('catalog');
-    Route::resource('users', 'UsersController');
+Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(function () {
+    Route::get('/', 'Admin\DashboardController@index');
+    Route::get('/catalog', 'Admin\DashboardController@catalog')->name('catalog');
+    Route::get('/products', 'Admin\DashboardController@products')->name('products');
+    Route::resource('users', 'Admin\UsersController');
+    Route::resource('/category', 'CategoryController');
 });
 
 Auth::routes();
