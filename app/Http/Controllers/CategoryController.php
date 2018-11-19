@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return Category::get()->toTree();
     }
 
     /**
@@ -35,8 +35,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
-        return redirect()->route('admin.catalog');
+        if ($request->parent) {
+            Category::create(['name' => $request->name], Category::where('id', $request->parent)->first());
+            return redirect()->route('admin.catalog');
+        } else {
+            Category::create($request->all());
+            return redirect()->route('admin.catalog');
+        }
     }
 
     /**

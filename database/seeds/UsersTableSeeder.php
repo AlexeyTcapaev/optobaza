@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\User;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -18,15 +18,15 @@ class UsersTableSeeder extends Seeder
 
         $this->create(random_int(5,10));
     }
-    
+
     /**
      * @param array $data
      * @param int $count
      */
     public function create(int $count, array $data = [])
     {
-        $payment_types = PaymentType::all();
-        $positions = Position::all();
+        //$payment_types = PaymentType::all();
+        //$positions = Position::all();
 
         while ($count) {
             $user = $this->make($data);

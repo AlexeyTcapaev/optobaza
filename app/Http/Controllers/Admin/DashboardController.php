@@ -18,7 +18,7 @@ class DashboardController extends Controller
     }
     public function catalog()
     {
-        $categories = Category::all();
+        $categories = Category::get()->toTree();
         return view('admin.catalog', [
             'categories' => $categories
         ]);

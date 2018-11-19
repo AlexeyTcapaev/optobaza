@@ -10,10 +10,11 @@ nav a {
     color: #000;
 }
 
-.i-nav{
-    height: 35px!important;
-    line-height: 35px!important;
+.i-nav {
+    height: 35px !important;
+    line-height: 35px !important;
 }
+
 nav ul a {
     color: #000;
     line-height: normal;
@@ -22,12 +23,15 @@ nav ul a {
     display: flex;
     align-items: center;
 }
-.secondary-content{
+
+.secondary-content {
     color: #0fa1e0;
 }
-.admin-catalog .actions{
+
+.admin-catalog .actions {
     display: flex;
 }
+
 .page-footer {
     padding-top: 20px;
     color: #0fa1e0;
@@ -42,9 +46,11 @@ nav ul a {
 .brand-logo {
     height: 100%;
 }
-.search-bar *{
-    border-radius: 0!important;
+
+.search-bar * {
+    border-radius: 0 !important;
 }
+
 .search-bar {
 
     display: flex;
@@ -53,10 +59,12 @@ nav ul a {
     align-items: center;
     padding: 5px 0;
 }
-a.btn-flat{
-    color: #0fa1e0!important;
-    background-color: transparent!important;
+
+a.btn-flat {
+    color: #0fa1e0 !important;
+    background-color: transparent !important;
 }
+
 .card {
     display: flex;
     flex-direction: column;
@@ -100,48 +108,60 @@ div.cascade div.view {
 div.cascade {
     margin: 2.75rem 0 0 0;
 }
-.btn{
-    color: #fff!important;
-    background-color: #0fa1e0!important;
+
+.btn {
+    color: #fff !important;
+    background-color: #0fa1e0 !important;
 }
+
 .news {
     margin: 2.75rem 0 0 0;
 }
-.bread{
-    position: relative!important;
+
+.bread {
+    position: relative !important;
     box-shadow: none;
     z-index: 0;
 }
-.news li{
+
+.news li {
     transition: 0.2s linear;
-    cursor:pointer;
+    cursor: pointer;
 }
-.news li:hover{
+
+.news li:hover {
     color: #fff;
     background-color: #0fa1e0;
 }
-.news li:hover .secondary-content{
+
+.news li:hover .secondary-content {
     color: #fff;
 
 }
-.nav-active{
-    background-color: #0fa1e0!important;
-    color: #fff!important;
+
+.nav-active {
+    background-color: #0fa1e0 !important;
+    color: #fff !important;
 }
-.collection-item{
+
+.collection-item {
     color: #000;
 }
-.breadcrumb:before{
-    color: #0fa1e0!important;
+
+.breadcrumb:before {
+    color: #0fa1e0 !important;
 }
-.breadcrumb{
-    color: #0fa1e0!important;
+
+.breadcrumb {
+    color: #0fa1e0 !important;
 }
+
 @media only screen and (max-width: 375px) {
-    h1{
+    h1 {
         font-size: 2.2rem;
     }
 }
+
 @media only screen and (max-width: 1320px) {
     .hide-on-med-and-down {
         display: none !important;
@@ -176,10 +196,12 @@ div.cascade {
 
     z-index: 99;
 }
+
 .collection .collection-item.active {
     background-color: #0fa1e0;
     color: #fff;
 }
+
 .cart-feature:hover {
     background-color: #0fa1e0;
 }
@@ -223,18 +245,28 @@ main {
     border-right: 2px solid #0fa1e0;
 }
 
+.collapsible-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.collapsible-header h5 {
+    margin: 0
+}
+
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
 }
-.admin-catalog{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+.admin-catalog {
+
 }
-.admin-catalog .actions a.btn{
+
+.admin-catalog .actions a.btn {
     margin: 0 10px;
 }
+
 nav .brand-logo {
     position: relative;
     display: flex;

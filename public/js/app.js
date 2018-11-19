@@ -792,6 +792,7 @@ $(document).ready(function () {
         indicators: true
     });
     $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
 });
 
 /***/ }),
