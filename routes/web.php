@@ -32,10 +32,14 @@ Route::get('/login', function () {
 
 Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(function () {
     Route::get('/', 'Admin\DashboardController@index');
-    Route::get('/catalog', 'Admin\DashboardController@catalog')->name('catalog');
-    Route::get('/products', 'Admin\DashboardController@products')->name('products');
+    Route::get('catalog', 'Admin\DashboardController@catalog')->name('catalog');
+    Route::get('tags', 'Admin\DashboardController@tags')->name('tags');
+    Route::get('carousel', 'Admin\DashboardController@carousel')->name('carousel');
+    Route::get('products', 'Admin\DashboardController@products')->name('products');
     Route::resource('users', 'Admin\UsersController');
-    Route::resource('/category', 'CategoryController');
+    Route::resource('category', 'CategoryController');
+    Route::resource('tag', 'TagController');
+    Route::resource('product', 'ProductController');
 });
 
 Auth::routes();

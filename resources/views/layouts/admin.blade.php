@@ -26,15 +26,17 @@
                     <li><a href="mobile.html">Mobile</a></li>
                 </ul>
             <main>
-    <div class="row hide-on-med-and-down">
+    <div class="row ">
 
-            <div class="col s12 m4 l2"> <!-- Note that "m4 l3" was added -->
+            <div class="col s12 m4 l2 hide-on-med-and-down"> <!-- Note that "m4 l3" was added -->
                 <div class="collection">
                     <a href="{{ route('admin.') }}" class="collection-item {{setActive(['admin'])}}">Пользователи</a>
                     <a href="{{ route('admin.catalog') }}" class="collection-item {{setActive(['admin/catalog'])}}">Каталог</a>
                     <a href="{{ route('admin.products') }}" class="collection-item {{setActive(['admin/products'])}}">Товары</a>
-                    <a href="#!" class="collection-item {{setActive(['admin/carousel'])}}">Карусель</a>
+                    <a href="{{ route('admin.tags') }}" class="collection-item {{setActive(['admin/tags'])}}">Теги</a>
+                    <a href="{{ route('admin.carousel') }}" class="collection-item {{setActive(['admin/carousel'])}}">Карусель</a>
                     <a href="#!" class="collection-item {{setActive(['admin/nav'])}}">Навигация</a>
+                    <a href="#!" class="collection-item {{setActive(['admin/nav'])}}">Страницы</a>
                 </div>
             </div>
 
@@ -42,8 +44,22 @@
                 @yield('content')
             </div>
 
-          </div>
         </main>
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#new-product')
+                            .attr('src', e.target.result).show()
+                        $('#i-non-img').remove()
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
     </body>
 </html>

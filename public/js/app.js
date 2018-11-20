@@ -785,7 +785,6 @@ module.exports = __webpack_require__(35);
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-
 $(document).ready(function () {
     $('.carousel.carousel-slider').carousel({
         fullWidth: true,
@@ -793,6 +792,7 @@ $(document).ready(function () {
     });
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
+    $('select').formSelect();
 });
 
 /***/ }),

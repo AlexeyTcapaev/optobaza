@@ -35,7 +35,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $product = Product::add($request);
+            $product->uploadImage($request->file('image'));
+            if (count($request->tags) > 0) {
+                foreach ($request->tags as $tag) {
+                    $product->tags()->attach($tag);
+                }
+            }
+            if (empty($product))
+                throw new Exception('Ошибка при создании продукта');
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return redirect()->route('admin.products');
     }
 
     /**
@@ -78,8 +91,18 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        try {
+            $product = Product::findOrFail($id);
+            if (empty($product))
+                return response()->json(['error' => 'Компания не найдена'], 404);
+            else {
+                $product->remove();
+                return redirect()->route('admin.products');
+            }
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

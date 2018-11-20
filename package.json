@@ -20,7 +20,11 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "codemirror": "^5.41.0",
+        "material-design-icons": "^3.0.1",
         "materialize-css": "^1.0.0-rc.2",
-        "mdbootstrap": "^4.5.13"
+        "materialnote": "^1.2.1",
+        "mdbootstrap": "^4.5.13",
+        "summernote": "^0.8.10"
     }
 }
