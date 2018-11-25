@@ -24,6 +24,10 @@ class Product extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+    public function slide()
+    {
+        return $this->morphMany(Slide::class,'linked');
+    }
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -35,7 +39,7 @@ class Product extends Model
     }
     public static function add($fields)
     {
-        $product = Product::create($fields->all());
+        $product = self::create($fields->all());
         return $product;
     }
     public function uploadImage($new_image)

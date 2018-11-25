@@ -38,7 +38,7 @@ class ProductController extends Controller
         try {
             $product = Product::add($request);
             $product->uploadImage($request->file('image'));
-            if (count($request->tags) > 0) {
+            if (isset($request->tags) && count($request->tags) > 0) {
                 foreach ($request->tags as $tag) {
                     $product->tags()->attach($tag);
                 }

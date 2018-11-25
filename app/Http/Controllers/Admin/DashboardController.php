@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Category;
 use App\Product;
+use App\Slide;
 use App\Tag;
 use App\Http\Controllers\Controller;
 
@@ -43,6 +44,13 @@ class DashboardController extends Controller
     }
     public function carousel()
     {
-        return view('admin.carousel');
+        $slides = Slide::all();
+        $categories = Category::all();
+        $products = Product::all();
+        return view('admin.carousel', [
+            'slides' => $slides,
+            'categories' => $categories,
+            'products' => $products,
+        ]);
     }
 }

@@ -33,4 +33,8 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
+    public function slide()
+    {
+        return $this->morphMany(Slide::class,'linked');
+    }
 }

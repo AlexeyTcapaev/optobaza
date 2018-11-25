@@ -40,6 +40,7 @@ Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(fu
     Route::resource('category', 'CategoryController');
     Route::resource('tag', 'TagController');
     Route::resource('product', 'ProductController');
+    Route::resource('slide', 'SlideController');
 });
 
 Auth::routes();

@@ -47,14 +47,17 @@
         </main>
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script>
-            function readURL(input) {
+            function readURL(input,item = '#new-product') {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
                     reader.onload = function (e) {
-                        $('#new-product')
+                        $(item)
                             .attr('src', e.target.result).show()
-                        $('#i-non-img').remove()
+                        if( item == '#new-product')
+                        {
+                            $('#i-non-img').remove()
+                        }
                     };
 
                     reader.readAsDataURL(input.files[0]);

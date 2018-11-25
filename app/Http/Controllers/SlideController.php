@@ -35,7 +35,15 @@ class SlideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $slide = Slide::add($request);
+            $slide->uploadImage($request->file('image'));
+            if (empty($slide))
+                throw new Exception('Ошибка при создании продукта');
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return redirect()->route('admin.carousel');
     }
 
     /**
@@ -67,9 +75,25 @@ class SlideController extends Controller
      * @param  \App\Slide  $slide
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slide $slide)
+    public function update(Request $request,$id)
     {
-        //
+        try {
+            $slide = Slide::findOrFail($id);
+            if (empty($slide))
+                return response()->json(['error' => 'Компания не найдена'], 404);
+            else {
+                $linked = explode(",", $request->linked);
+                $request['linked_id'] = $linked[0];
+                $request['linked_type'] = $linked[1];
+                $slide->update($request->all());
+                if ($request->hasFile('image')) {
+                    $slide->uploadImage($request->file('image'));
+                }
+            }
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return redirect()->route('admin.carousel');
     }
 
     /**
@@ -78,8 +102,18 @@ class SlideController extends Controller
      * @param  \App\Slide  $slide
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slide $slide)
+    public function destroy($id)
     {
-        //
+        try {
+            $slide = Slide::findOrFail($id);
+            if (empty($slide))
+                return response()->json(['error' => 'Компания не найдена'], 404);
+            else {
+                $slide->remove();
+                return redirect()->route('admin.carousel');
+            }
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

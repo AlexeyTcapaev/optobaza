@@ -57,6 +57,7 @@
                 <img class="card-img-top" src="/storage/uploads/{{$product->image}}" alt="{{$product->name}}">
             </div>
             <div class="card-body card-body-cascade">
+                <h5 class="secondary pb-2 pt-1"></i>{{$product->name}}</h5>
                 <h5 class="secondary pb-2 pt-1"></i>{{$product->category->name}}</h5>
                 @if(count ($product->tags) > 0)
                 <h4 class="font-weight-bold card-title">
