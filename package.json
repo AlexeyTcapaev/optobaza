@@ -25,6 +25,7 @@
         "materialize-css": "^1.0.0-rc.2",
         "materialnote": "^1.2.1",
         "mdbootstrap": "^4.5.13",
-        "summernote": "^0.8.10"
+        "summernote": "^0.8.10",
+        "trumbowyg": "^2.12.2"
     }
 }

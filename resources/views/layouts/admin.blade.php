@@ -35,8 +35,7 @@
                     <a href="{{ route('admin.products') }}" class="collection-item {{setActive(['admin/products'])}}">Товары</a>
                     <a href="{{ route('admin.tags') }}" class="collection-item {{setActive(['admin/tags'])}}">Теги</a>
                     <a href="{{ route('admin.carousel') }}" class="collection-item {{setActive(['admin/carousel'])}}">Карусель</a>
-                    <a href="#!" class="collection-item {{setActive(['admin/nav'])}}">Навигация</a>
-                    <a href="#!" class="collection-item {{setActive(['admin/nav'])}}">Страницы</a>
+                    <a href="{{ route('admin.pages') }}" class="collection-item {{setActive(['admin/pages'])}}">Страницы</a>
                 </div>
             </div>
 

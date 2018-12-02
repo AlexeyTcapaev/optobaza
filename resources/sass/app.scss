@@ -1,5 +1,5 @@
 @import '~materialize-css/sass/materialize';
-
+@import '~trumbowyg/dist/ui/sass/trumbowyg';
 
 nav {
     position: fixed;
@@ -10,31 +10,50 @@ nav {
 nav a {
     color: #000;
 }
-.carousel-admin-card{
+
+.carousel-admin-card {
     position: relative;
 }
-.carousel-admin-card img{
+
+.carousel-admin-card img {
     height: 400px;
     width: 100%;
 }
-.absolute-form{
+
+.list {
+
+    display: flex;
+    flex-direction: column;
+}
+.list li{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 10px 10px 10px!important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.absolute-form {
     position: absolute;
     bottom: 40px;
 }
-.flex{
+
+.flex {
     display: flex;
     padding: 0 0.75rem;
 }
-.align-center{
+
+.align-center {
     align-items: center;
 }
+
 .i-nav {
     height: 35px !important;
     line-height: 35px !important;
 }
-.card .view{
+
+.card .view {
     display: flex;
 }
+
 nav ul a {
     color: #000;
     line-height: normal;
@@ -94,16 +113,20 @@ a.btn-flat {
     flex-direction: column;
 }
 
+div.cascade div.view img {
+    object-fit: cover;
+    width: 100%;
+}
+
 div.cascade div.view {
     margin-left: 4%;
     margin-right: 4%;
     margin-top: -1.25rem;
+    max-height: 230px;
     display: flex;
 }
 
-.view img {
-
-}
+.view img {}
 
 .view {
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);

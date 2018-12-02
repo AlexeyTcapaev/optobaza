@@ -36,11 +36,13 @@ Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(fu
     Route::get('tags', 'Admin\DashboardController@tags')->name('tags');
     Route::get('carousel', 'Admin\DashboardController@carousel')->name('carousel');
     Route::get('products', 'Admin\DashboardController@products')->name('products');
+    Route::get('pages', 'Admin\DashboardController@pages')->name('pages');
     Route::resource('users', 'Admin\UsersController');
     Route::resource('category', 'CategoryController');
     Route::resource('tag', 'TagController');
     Route::resource('product', 'ProductController');
     Route::resource('slide', 'SlideController');
+    Route::resource('page', 'PageController');
 });
 
 Auth::routes();

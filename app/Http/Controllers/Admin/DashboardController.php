@@ -8,6 +8,7 @@ use App\Category;
 use App\Product;
 use App\Slide;
 use App\Tag;
+use App\Page;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -51,6 +52,13 @@ class DashboardController extends Controller
             'slides' => $slides,
             'categories' => $categories,
             'products' => $products,
+        ]);
+    }
+    public function pages()
+    {
+        $pages = Page::all();
+        return view('admin.pages', [
+            'pages' => $pages
         ]);
     }
 }
