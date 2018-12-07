@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
 <h1>О нас</h1>
-<iframe src="https://yandex.ru/map-widget/v1/-/CBBlzPaQdD" width="90%" height="400" frameborder="0" allowfullscreen="true"></iframe>
+<iframe src="https://yandex.ru/map-widget/v1/-/CBBlzPaQdD" width="100%" height="400" frameborder="0" allowfullscreen="true"></iframe>
 </div>
 @endsection
 @section('breadcrumbs')
@@ -16,7 +16,7 @@
         </div>
     </div>
     </div>
-  </nav>   
+  </nav>
 @endsection
 @section('sidebar')
 <h1>Новости</h1>

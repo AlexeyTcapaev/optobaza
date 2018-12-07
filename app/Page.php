@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use App\Navbar;
 
 class Page extends Model
 {
@@ -17,5 +18,9 @@ class Page extends Model
                 'source' => 'name'
             ]
         ];
+    }
+    public function nav()
+    {
+        return $this->hasOne(Navbar::class);
     }
 }

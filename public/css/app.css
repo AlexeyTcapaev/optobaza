@@ -10357,6 +10357,19 @@ nav a {
   position: relative;
 }
 
+.slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+}
+
 .carousel-admin-card img {
   height: 400px;
   width: 100%;

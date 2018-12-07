@@ -19,13 +19,10 @@
             <i class="material-icons">search</i>
         </div>
         <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Главная</a></li>
-            <li><a href="badges.html">О нас</a></li>
-            <li><a href="badges.html">Каталог</a></li>
-            <li><a href="collapsible.html">Правила работы</a></li>
-            <li><a href="mobile.html">Оплата и доставка</a></li>
-            <li><a href="mobile.html">Контакты</a></li>
-            <li><a href="mobile.html">Акции</a></li>
+            <li><a href="{{ url('/') }}">Главная</a></li>
+            @foreach ($nav as $item)
+                <li><a href="{{ url('/'.$item->page->slug) }}">{{$item->page->name}}</a></li>
+            @endforeach
             <li><a href="mobile.html"><i class="material-icons i-nav">account_circle</i></a></li>
         </ul>
         </div>

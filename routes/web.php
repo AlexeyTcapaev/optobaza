@@ -1,5 +1,9 @@
 <?php
 
+use App\Navbar;
+use App\Page;
+use App\Slide;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +16,10 @@
  */
 
 Route::get('/', function () {
-    return view('index');
+    $carousel = Slide::with('linked')->get();
+    return view('index', [
+        'carousel' => $carousel
+    ]);
 });
 Route::get('/contacts', function () {
     return view('contacts');
@@ -52,3 +59,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{page}', function ($page) {
+    $page = Page::where('slug', $page)->first();
+    return view('page', [
+        'page' => $page
+    ]);
+});

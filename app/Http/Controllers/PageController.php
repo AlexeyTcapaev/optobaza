@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Page;
 use Exception;
 use Illuminate\Http\Request;
+use App\Navbar;
 
 class PageController extends Controller
 {
@@ -38,7 +39,10 @@ class PageController extends Controller
     {
         try {
             $page = Page::create($request->all());
-            if (empty($product))
+            if ($request->nav) {
+                Navbar::create(['page_id' => $page->id]);
+            }
+            if (empty($page))
                 throw new Exception('Ошибка при создании продукта');
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
