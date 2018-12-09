@@ -10,7 +10,7 @@ use App\Category;
 
 class Product extends Model
 {
-    protected $fillable = ['name', 'description','slug','manufacturer','article','rating','category_id'];
+    protected $fillable = ['name', 'description', 'slug', 'manufacturer', 'article', 'rating', 'category_id', 'recomendated'];
     use Sluggable;
     public function sluggable()
     {
@@ -26,7 +26,7 @@ class Product extends Model
     }
     public function slide()
     {
-        return $this->morphMany(Slide::class,'linked');
+        return $this->morphMany(Slide::class, 'linked');
     }
     public function category()
     {
@@ -39,6 +39,10 @@ class Product extends Model
     }
     public static function add($fields)
     {
+
+        if ($fields->has('recomendated')) {
+            $fields['recomendated'] = 1;
+        } else $fields['recomendated'] = 0;
         $product = self::create($fields->all());
         return $product;
     }

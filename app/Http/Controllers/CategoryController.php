@@ -36,12 +36,15 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         if ($request->parent) {
-            Category::create(['name' => $request->name], Category::where('id', $request->parent)->first());
-            return redirect()->route('admin.catalog');
+
+            $category = Category::create(['name' => $request->name], Category::where('id', $request->parent)->first());
         } else {
-            Category::create($request->all());
-            return redirect()->route('admin.catalog');
+            $category = Category::create($request->all());
+
         }
+        $category->generatePath()->save();
+        return redirect()->route('admin.catalog');
+
     }
 
     /**
@@ -50,9 +53,16 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($path)
     {
-        //
+        $category = Category::where('path', $path)->firstOrFail();
+        if ($category)
+            return view('category', [
+            'category' => $category
+        ]);
+        else {
+            return view('404');
+        }
     }
 
     /**
@@ -65,7 +75,6 @@ class CategoryController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -75,7 +84,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        
+
     }
 
     /**

@@ -20,6 +20,8 @@
         </div>
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url('/') }}">Главная</a></li>
+            <li><a href="{{ url('/news') }}">Новости</a></li>
+            <li><a href="{{ url('/catalog') }}">Каталог</a></li>
             @foreach ($nav as $item)
                 <li><a href="{{ url('/'.$item->page->slug) }}">{{$item->page->name}}</a></li>
             @endforeach

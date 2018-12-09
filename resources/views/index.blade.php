@@ -5,7 +5,9 @@
     <div class="carousel-item" href="#one!">
         <h2></h2>
         <div class="slide-image">
+            <a href="{{$slide->linked->slug}}">
                 <img src="/storage/uploads/{{$slide->image}}">
+            </a>
         </div>
     </div>
     @endforeach
@@ -14,118 +16,29 @@
 @section('content')
 <div class="row">
 <h1>Рекомендуем</h1>
-<div class="index-ul ">
-    <div class="col s12 col m4">
-        <div class="card cascade">
-            <div class="view">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                </a>
+<div class="index-ul">
+    @foreach ($recomendated as $product)
+        <article class="col s12 col m4">
+            <div class="card cascade">
+                @if($product->image)
+                <div class="view">
+                    <img class="card-img-top" src="/storage/uploads/{{$product->image}}" alt="{{$product->name}}">
+                </div>
+                @endif
+                <div class="card-body card-body-cascade">
+                    <h5 class="secondary pb-2 pt-1">{{$product->name}}</h5>
+                    <h4 class="font-weight-bold card-title">{{$product->tags}}</h4>
+                    <p class="card-text">{{$product->description}}</p>
+                    <p class="card-text">Артикул: <a>{{$product->article}}</a></p>
+                    <a class="btn  waves-effect waves-light">В корзину</a>
+                </div>
             </div>
-            <div class="card-body card-body-cascade">
-                <h5 class="secondary pb-2 pt-1"><i class="fa fa-cutlery"></i> Culinary</h5>
-                <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                    suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                <a class="btn  waves-effect waves-light">Button</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 col m4">
-        <div class="card cascade">
-            <div class="view">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                </a>
-            </div>
-            <div class="card-body card-body-cascade">
-                <h5 class="secondary pb-2 pt-1"><i class="fa fa-cutlery"></i> Culinary</h5>
-                <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                    suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                <a class="btn  waves-effect waves-light">Button</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 col m4">
-        <div class="card cascade">
-            <div class="view">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                </a>
-            </div>
-            <div class="card-body card-body-cascade">
-                <h5 class="secondary pb-2 pt-1"><i class="fa fa-cutlery"></i> Culinary</h5>
-                <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                    suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                <a class="btn  waves-effect waves-light">Button</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 col m4">
-        <div class="card cascade">
-            <div class="view">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                </a>
-            </div>
-            <div class="card-body card-body-cascade">
-                <h5 class="secondary pb-2 pt-1"><i class="fa fa-cutlery"></i> Culinary</h5>
-                <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                    suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                <a class="btn  waves-effect waves-light">Button</a>
-            </div>
-        </div>
-    </div>
+        </article>
+    @endforeach
 </div>
 </div>
 @endsection
 @section('sidebar')
-<h1>Новости</h1>
-<div class="row">
-<ul class="collection news">
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content">06.11.2018</a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-  </ul>
-  </div>
+@include('components.news')
+
 @endsection

@@ -3,6 +3,8 @@
 use App\Navbar;
 use App\Page;
 use App\Slide;
+use App\Product;
+use App\News;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +19,10 @@ use App\Slide;
 
 Route::get('/', function () {
     $carousel = Slide::with('linked')->get();
+    $recomendated = Product::where('recomendated', 1)->get();
     return view('index', [
-        'carousel' => $carousel
+        'carousel' => $carousel,
+        'recomendated' => $recomendated
     ]);
 });
 Route::get('/contacts', function () {
@@ -33,8 +37,16 @@ Route::get('/work', function () {
 Route::get('/catalog', function () {
     return view('catalog');
 });
+
+
 Route::get('/login', function () {
     return view('login');
+});
+Route::get('/news', function () {
+    $news = News::all();
+    return view('news', [
+        'news' => $news
+    ]);
 });
 
 Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(function () {
@@ -69,8 +81,7 @@ Route::get('/{page}', function ($page) {
         'page' => $page
     ]);
 });
-
+Route::get('catalog/{path}', 'CategoryController@show')->where('path', '[a-zA-Z0-9/_-]+');
 Route::get('/{any}', function () {
-
     return view('404');
 })->where('any', '.*');

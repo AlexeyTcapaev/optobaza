@@ -9,7 +9,7 @@ use App\Product;
 
 class Category extends Model
 {
-    use NodeTrait,Sluggable {
+    use NodeTrait, Sluggable {
         NodeTrait::replicate as replicateNode;
         Sluggable::replicate as replicateSlug;
     }
@@ -20,7 +20,7 @@ class Category extends Model
 
         return $instance;
     }
-    protected $fillable = ['name','slug'];
+    protected $fillable = ['name', 'slug'];
     public function sluggable()
     {
         return [
@@ -35,6 +35,12 @@ class Category extends Model
     }
     public function slide()
     {
-        return $this->morphMany(Slide::class,'linked');
+        return $this->morphMany(Slide::class, 'linked');
+
+    }
+    public function generatePath()
+    {
+        $this->path = $this->isRoot() ? $this->slug : $this->parent->path . '/' . $this->slug;
+        return $this;
     }
 }

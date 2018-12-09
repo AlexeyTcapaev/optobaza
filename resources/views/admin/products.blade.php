@@ -37,13 +37,21 @@
                                 </div>
                                 <div class="input-field col s12">
                                         <select name="category_id">
-                                            <option value="null">Без категории</option>
+                                            <option value="">Без категории</option>
                                             @foreach ($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                         <label>Категория</label>
                                 </div>
+                                <div class="input-field col s12">
+                                    <p>
+                                        <label>
+                                        <input type="checkbox" name="recomendated"/>
+                                            <span>Выводить в рекомендациях</span>
+                                        </label>
+                                    </p>
+                               </div>
                                 <button class="btn">Создать</button>
                     </div>
                 </div>
@@ -58,7 +66,9 @@
             </div>
             <div class="card-body card-body-cascade">
                 <h5 class="secondary pb-2 pt-1"></i>{{$product->name}}</h5>
-                <h5 class="secondary pb-2 pt-1"></i>{{$product->category->name}}</h5>
+                @if($product->category)
+                    <h5 class="secondary pb-2 pt-1"></i>{{$product->category->name}}</h5>
+                @endif
                 @if(count ($product->tags) > 0)
                 <h4 class="font-weight-bold card-title">
                     @foreach ($product->tags as $tag)

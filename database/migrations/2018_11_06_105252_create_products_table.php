@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('category_id')->nullable();
             $table->string('name');
             $table->string('slug');
+            $table->boolean('recomendated')->default(false);
             $table->string('image')->nullable();
             $table->longText('description')->nullable();
             $table->string('manufacturer')->nullable();
