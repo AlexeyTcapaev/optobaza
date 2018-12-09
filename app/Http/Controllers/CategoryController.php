@@ -55,7 +55,7 @@ class CategoryController extends Controller
      */
     public function show($path)
     {
-        $category = Category::where('path', $path)->firstOrFail();
+        $category = Category::where('path', $path)->first();
         if ($category)
             return view('category', [
             'category' => $category

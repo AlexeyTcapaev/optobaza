@@ -5,6 +5,7 @@ use App\Page;
 use App\Slide;
 use App\Product;
 use App\News;
+use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,10 @@ Route::get('/work', function () {
     return view('work');
 });
 Route::get('/catalog', function () {
-    return view('catalog');
+    $categories = Category::where('parent_id', null)->get();
+    return view('catalog', [
+        'categories' => $categories
+    ]);
 });
 
 
@@ -77,9 +81,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/{page}', function ($page) {
 
     $page = Page::where('slug', $page)->first();
-    return view('page', [
+    if ($page)
+        return view('page', [
         'page' => $page
     ]);
+    else {
+        return view('404');
+    }
 });
 Route::get('catalog/{path}', 'CategoryController@show')->where('path', '[a-zA-Z0-9/_-]+');
 Route::get('/{any}', function () {
