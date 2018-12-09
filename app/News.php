@@ -4,24 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-use App\Navbar;
 
-class Page extends Model
+class News extends Model
 {
     use Sluggable;
 
-    protected $fillable = ['name', 'content', 'slug'];
+    protected $fillable = ['title', 'content', 'slug'];
+
     public function sluggable()
     {
         return [
             'slug' => [
-                'source' => 'name',
+                'source' => 'title',
                 'onUpdate' => true
             ]
         ];
-    }
-    public function nav()
-    {
-        return $this->hasOne(Navbar::class);
     }
 }

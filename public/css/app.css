@@ -10357,12 +10357,26 @@ nav a {
   position: relative;
 }
 
+.hide-on-med-and-down li {
+  margin: 0 10px;
+}
+
 .slide-image {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+form.collapsible-header {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .slide-image img {
@@ -10385,7 +10399,7 @@ nav a {
           flex-direction: column;
 }
 
-.list li {
+.list > li {
   width: 100%;
   margin: 10px 0;
   padding: 10px 10px 10px 10px !important;

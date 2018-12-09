@@ -69,7 +69,7 @@
                 <p class="card-text">{{$product->description}}</p>
                 <div class="admin-catalog">
                     <div class="actions">
-                        <button class="btn  waves-effect waves-light">редактировать</button>
+                        <button class="btn  waves-effect waves-light">Редактировать</button>
                         {!! Form::open(['route'=>['admin.product.destroy',$product->id],'method' => 'delete']) !!}
                             <button class="btn">Удалить</button>
                         {!! Form::close() !!}

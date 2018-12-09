@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\News;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return Category::get()->toTree()->with('products');
+        //
     }
 
     /**
@@ -35,22 +35,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->parent) {
-            Category::create(['name' => $request->name], Category::where('id', $request->parent)->first());
-            return redirect()->route('admin.catalog');
-        } else {
-            Category::create($request->all());
-            return redirect()->route('admin.catalog');
+        try {
+            $news = News::create($request->all());
+            if (empty($news))
+                throw new Exception('Ошибка при создании продукта');
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
         }
+        return redirect()->route('admin.adminnews');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(News $news)
     {
         //
     }
@@ -58,10 +59,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(News $news)
     {
         //
     }
@@ -70,23 +71,26 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, News $news)
     {
-        
+        $news->fill($request->all());
+        $news->save();
+        return redirect()->route('admin.adminnews');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(News $news)
     {
-        Category::find($id)->delete();
-        return redirect()->route('admin.catalog');
+        $news = News::find($id);
+        $news->delete();
+        return redirect()->route('admin.adminnews');
     }
 }

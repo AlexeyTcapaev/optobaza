@@ -81,7 +81,19 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+        $page->fill($request->all());
+        $page->save();
+        $nav = Navbar::where('page_id', $page->id)->first();
+        if ($request->has('nav')) {
+            if ($request->nav == 'on') {
+                if (!$nav) {
+                    Navbar::create(['page_id' => $page->id]);
+                }
+            }
+        } elseif($nav) {
+            $nav->delete();
+        }
+        return redirect()->route('admin.pages');
     }
 
     /**
@@ -90,8 +102,13 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy($id)
     {
-        //
+        $page = Page::find($id);
+        if ($page->has('nav')) {
+            Navbar::where('page_id', $page->id)->delete();
+        }
+        $page->delete();
+        return redirect()->route('admin.pages');
     }
 }

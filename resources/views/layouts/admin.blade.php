@@ -36,6 +36,7 @@
                     <a href="{{ route('admin.tags') }}" class="collection-item {{setActive(['admin/tags'])}}">Теги</a>
                     <a href="{{ route('admin.carousel') }}" class="collection-item {{setActive(['admin/carousel'])}}">Карусель</a>
                     <a href="{{ route('admin.pages') }}" class="collection-item {{setActive(['admin/pages'])}}">Страницы</a>
+                    <a href="{{ route('admin.adminnews') }}" class="collection-item {{setActive(['admin/adminnews'])}}">Новости</a>
                 </div>
             </div>
 

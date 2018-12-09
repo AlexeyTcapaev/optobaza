@@ -44,12 +44,14 @@ Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(fu
     Route::get('carousel', 'Admin\DashboardController@carousel')->name('carousel');
     Route::get('products', 'Admin\DashboardController@products')->name('products');
     Route::get('pages', 'Admin\DashboardController@pages')->name('pages');
+    Route::get('adminnews', 'Admin\DashboardController@news')->name('adminnews');
     Route::resource('users', 'Admin\UsersController');
     Route::resource('category', 'CategoryController');
     Route::resource('tag', 'TagController');
     Route::resource('product', 'ProductController');
     Route::resource('slide', 'SlideController');
     Route::resource('page', 'PageController');
+    Route::resource('news', 'NewsController');
 });
 
 Auth::routes();
@@ -61,8 +63,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/{page}', function ($page) {
+
     $page = Page::where('slug', $page)->first();
     return view('page', [
         'page' => $page
     ]);
 });
+
+Route::get('/{any}', function () {
+
+    return view('404');
+})->where('any', '.*');

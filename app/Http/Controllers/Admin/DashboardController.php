@@ -10,6 +10,7 @@ use App\Slide;
 use App\Tag;
 use App\Page;
 use App\Http\Controllers\Controller;
+use App\News;
 
 class DashboardController extends Controller
 {
@@ -59,6 +60,13 @@ class DashboardController extends Controller
         $pages = Page::all();
         return view('admin.pages', [
             'pages' => $pages
+        ]);
+    }
+    public function news()
+    {
+        $news = News::all();
+        return view('admin.news', [
+            'news' => $news
         ]);
     }
 }
