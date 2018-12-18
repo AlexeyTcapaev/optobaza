@@ -52,6 +52,12 @@ Route::get('/news', function () {
         'news' => $news
     ]);
 });
+Route::get('/cart', function () {
+    $cart = Cart::getTotal();
+    return view('cart', [
+        'cart' => $cart
+    ]);
+});
 
 Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(function () {
     Route::get('/', 'Admin\DashboardController@index');

@@ -55,12 +55,12 @@ class CategoryController extends Controller
      */
     public function show($path)
     {
-        $category = Category::where('path', $path)->first();
-        if ($category)
+        $category = Category::where('path', $path)->with('products', 'descendants')->first();
+        if ($category) {
             return view('category', [
-            'category' => $category
-        ]);
-        else {
+                'category' => $category,
+            ]);
+        } else {
             return view('404');
         }
     }
