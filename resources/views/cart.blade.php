@@ -12,6 +12,22 @@
   </nav>
 @endsection
 @section('content')
+<div class="row">
+
+@foreach ($cart as $order)
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <img src="/storage/uploads/{{$order->product->image}}" alt="{{$order->product->name}}">
+            <div>
+                <h4>{{$order->product->name}}</h4>
+                <p>{{$order->product->description}}</p>
+            </div>
+            <a href="#!" class="secondary-content"><i class="material-icons">close</i></a>
+            <a>Количество: {{$order->quantity}}</a>
+        </li>
+    </ul>
+@endforeach
+</div>
 <form class="col s12">
     <div class="row">
       <div class="input-field col s6">

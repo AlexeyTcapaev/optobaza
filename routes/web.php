@@ -6,6 +6,7 @@ use App\Slide;
 use App\Product;
 use App\News;
 use App\Category;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,17 @@ Route::get('/catalog', function () {
     ]);
 });
 
+Route::post('/cart/add', function (Request $request) {
 
+    $product = Product::find($request->id);
+    Cart::add([
+        'id' => $product->id,
+        'name' => $product->name,
+        'price' => 0,
+        'quantity' => 1,
+    ]);
+    return back();
+});
 Route::get('/login', function () {
     return view('login');
 });
@@ -53,7 +64,10 @@ Route::get('/news', function () {
     ]);
 });
 Route::get('/cart', function () {
-    $cart = Cart::getTotal();
+    $cart = Cart::getContent();
+    foreach ($cart as $key => $order) {
+        $order->product = Product::find($order->id);
+    }
     return view('cart', [
         'cart' => $cart
     ]);

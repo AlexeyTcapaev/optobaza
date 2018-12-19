@@ -57,7 +57,7 @@
             </div>
             <div class="my-badge-wrapper">
                 <a href="/cart" class="waves-effect waves-light btn btn-floating cart-feature" ><i class="material-icons">shopping_cart</i></a>
-                <span>{{\Cart::getTotal()}}</span>
+                <span>{{Cart::getTotalQuantity()}}</span>
             </div>
         </main>
         <footer class="page-footer">
