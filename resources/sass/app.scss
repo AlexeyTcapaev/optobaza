@@ -15,8 +15,37 @@ nav a {
     position: relative;
 }
 
+form.search-bar button[type=submit] {
+    display: flex;
+    box-sizing: border-box;
+    color: #0fa1e0;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: 64px;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 .hide-on-med-and-down li {
     margin: 0 10px;
+}
+
+.cart-accept {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cart-accept .input-field {
+    padding: 0 20px 0 0;
+    min-width: 250px;
 }
 
 .slide-image {

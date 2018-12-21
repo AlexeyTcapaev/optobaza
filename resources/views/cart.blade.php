@@ -31,13 +31,13 @@
 @endforeach
 </div>
 <form class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
+    <div class="row cart-accept">
+      <div class="input-field">
         <i class="material-icons prefix">mail</i>
         <input id="icon_prefix" type="text" class="validate" oninput="check(this.value)">
         <label for="icon_prefix">Почта</label>
       </div>
-      <button class="waves-effect waves-light btn" id="submit" disabled>button</button>
+      <button class="waves-effect waves-light btn" id="submit" disabled>Заказать</button>
   </form>
   <script>
       function check(value) {

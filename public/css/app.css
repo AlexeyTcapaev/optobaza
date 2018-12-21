@@ -10357,8 +10357,49 @@ nav a {
   position: relative;
 }
 
+form.search-bar button[type=submit] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #0fa1e0;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: 64px;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 .hide-on-med-and-down li {
   margin: 0 10px;
+}
+
+.cart-accept {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.cart-accept .input-field {
+  padding: 0 20px 0 0;
+  min-width: 250px;
 }
 
 .slide-image {

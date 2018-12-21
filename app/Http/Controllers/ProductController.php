@@ -50,7 +50,23 @@ class ProductController extends Controller
         }
         return redirect()->route('admin.products');
     }
-
+    public function search(Request $request)
+    {
+        if($request->search == null)
+        {
+            return view('search', [
+                'message' => 'Не задана строка для поиска'
+            ]);
+        }
+        $products = Product::where('name', 'LIKE', '%' . $request->search . '%')->orWhere('article', 'LIKE', '%' . $request->search . '%')->get();
+        if (count($products) > 0)
+            return view('search', [
+            'products' => $products
+        ]);
+        else return view('search', [
+            'message' => 'По вашему запросу ничего не найдено'
+        ]);
+    }
     /**
      * Display the specified resource.
      *

@@ -30,6 +30,7 @@ Route::get('/', function () {
 Route::get('/contacts', function () {
     return view('contacts');
 });
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -72,7 +73,7 @@ Route::get('/cart', function () {
         'cart' => $cart
     ]);
 });
-
+Route::get('/search','ProductController@search')->name('product.search');
 Route::name('admin.')->prefix('admin')->middleware('auth', 'is_admin')->group(function () {
     Route::get('/', 'Admin\DashboardController@index');
     Route::get('catalog', 'Admin\DashboardController@catalog')->name('catalog');

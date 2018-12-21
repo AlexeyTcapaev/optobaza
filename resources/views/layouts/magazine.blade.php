@@ -14,10 +14,10 @@
         <div class="nav-wrapper">
         <a href="{{ url('/') }}" class="brand-logo"><img src="/storage/logo.png"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <div class="search-bar hide-on-med-and-down">
-            <input type="text" class="browser-default" placeholder="Поиск..">
-            <i class="material-icons">search</i>
-        </div>
+        <form class="search-bar hide-on-med-and-down" method="GET" action="/search">
+            <input type="text" name="search" class="browser-default" placeholder="Поиск..">
+            <button type="submit"><i class="material-icons">search</i></button>
+        </form>
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ url('/') }}">Главная</a></li>
             <li><a href="{{ url('/news') }}">Новости</a></li>
