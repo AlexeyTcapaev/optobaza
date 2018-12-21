@@ -16,14 +16,16 @@
 
 @foreach ($cart as $order)
     <ul class="collection">
-        <li class="collection-item avatar">
+        <li class="collection-item avatar cart-item">
             <img src="/storage/uploads/{{$order->product->image}}" alt="{{$order->product->name}}">
-            <div>
+            <div class="info">
                 <h4>{{$order->product->name}}</h4>
                 <p>{{$order->product->description}}</p>
             </div>
-            <a href="#!" class="secondary-content"><i class="material-icons">close</i></a>
-            <a>Количество: {{$order->quantity}}</a>
+            <div class="actions">
+                <a ><i class="material-icons">close</i></a>
+                <a>Количество: {{$order->quantity}}</a>
+            </div>
         </li>
     </ul>
 @endforeach

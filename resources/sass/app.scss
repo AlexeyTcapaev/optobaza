@@ -1,5 +1,6 @@
 @import '~materialize-css/sass/materialize';
 @import '~trumbowyg/dist/ui/sass/trumbowyg';
+
 nav {
     position: fixed;
     z-index: 99;
@@ -25,14 +26,40 @@ nav a {
     height: 100%;
     width: 100%;
 }
-form.collapsible-header{
+
+form.collapsible-header {
     flex-direction: column;
     align-items: flex-start;
 }
+
 .slide-image img {
     width: 100%;
     object-fit: contain;
     height: 100%;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-item img {
+    object-fit: contain;
+}
+
+.cart-item .info {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.cart-item .actions {
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.cart-item div {
+    display: flex;
+    flex-direction: column;
 }
 
 .carousel-admin-card img {
@@ -45,7 +72,7 @@ form.collapsible-header{
     flex-direction: column;
 }
 
-.list > li {
+.list>li {
     width: 100%;
     margin: 10px 0;
     padding: 10px 10px 10px 10px !important;
@@ -135,7 +162,7 @@ a.btn-flat {
 
 div.cascade div.view img {
     height: 100%;
-    width:100%;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -232,9 +259,11 @@ div.cascade {
     .hide-on-med-and-down {
         display: none !important;
     }
+
     nav a.sidenav-trigger {
         display: block;
     }
+
     main {
         margin: 56px 0 0 0 !important;
     }
